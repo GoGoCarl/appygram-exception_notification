@@ -1,6 +1,6 @@
-require 'exception-notification'
+require 'appygram-exception_notification/exception_notifier'
 
-class AppygramExceptionNotifier
+class AppygramExceptionNotification
 
   def self.hi
     puts "hello, world"
