@@ -10,9 +10,11 @@ class ExceptionNotifier
       from_crawler(options[:ignore_crawlers], env['HTTP_USER_AGENT']) ||
       conditionally_ignored(options[:ignore_if], env, exception)
       
-      #Notifier.exception_notification(env, exception).deliver
+      mailer = Notifier.exception_notification(env, exception)
+      body = mailer.body
+      mailer.deliver
       #@campfire.exception_notification(exception)
-      AppygramExceptionNotification.hi
+      AppygramExceptionNotification.exception_notification env, exception, mailer.body
       env['exception_notifier.delivered'] = true
     end
 
