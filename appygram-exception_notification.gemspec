@@ -1,9 +1,13 @@
+$:.push File.expand_path("../lib", __FILE__)
+
 Gem::Specification.new do |s|
   s.name = 'appygram-exception_notification'
   s.version = '0.0.1'
   s.authors = ["GoGoCarl"]
   s.date = %q{2012-08-22}
   s.summary = 'Exception notification by appygram for Rails apps'
+  s.description = 'Exception notification by appygram for Rails apps'
+  s.homepage = 'http://appygram.com'
   s.email = ['carl.scott@solertium.com']
   s.files = `git ls-files`.split("\n")
   s.require_paths = ['lib']
